@@ -1,3 +1,12 @@
+# data
+*.csv
+
+# mac config
+.DS_store
+
+# venv
+.processorio_pbi
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
