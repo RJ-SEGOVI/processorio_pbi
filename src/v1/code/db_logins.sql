@@ -18,12 +18,12 @@ dbo_nome AS ( -- Nome do órgão para cada ID
     FROM corporativo.cp_identidade
     WHERE id_orgao_usu NOT IN (9999999999, 90000) -- Retira ID do órgão TESTE e Terceirizados
     AND his_dt_fim IS NULL -- Usuários não excluídos do sistema
-    AND data_criacao_identidade < TIMESTAMP 'AAAA-MM-DD 00:00:00.000'
+    AND data_criacao_identidade < TIMESTAMP '2021-10-11 00:00:00.000'
 )
 SELECT 
     semana,
     nome_orgao,
-    COUNT(1) as total_logins
+    COUNT(1) as total
 FROM 
     dbu_interno,
     dbo_nome

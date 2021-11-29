@@ -22,8 +22,8 @@ dba_nome AS ( -- Nome do assunto para cada ID
     FROM siga.vw_ex_documento
     WHERE id_orgao_usu <> '9999999999' -- Retira ID do órgão TESTE
     AND to_char(trunc(dt_doc, 'IW'), 'YYYY/MM/DD') IS NOT NULL -- Documentos criados, não contabilizando os temporários
-    AND id_doc_anterior IS NULL -- Documentos únicos, não contabilizando os juntados
-    AND dt_doc < TIMESTAMP 'AAAA-MM-DD 00:00:00.000'
+    AND id_doc_pai IS NULL -- Documentos únicos, não contabilizando os juntados
+    AND dt_doc < TIMESTAMP '2021-10-18 00:00:00.000'
 )
 , dbe_tipo AS ( -- Tipo documental (Processo Administrativo / Expediente) para cada espécie (forma)
     SELECT
